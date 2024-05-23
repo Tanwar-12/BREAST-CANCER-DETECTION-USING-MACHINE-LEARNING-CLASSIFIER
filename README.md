@@ -135,4 +135,3 @@ _**We have extracted features of breast cancer patient cells and normal person c
 
 **Target:** This denotes the class label, where 0 indicates benign and 1 indicates malignant, which is the target variable for prediction.
 
-### **EXPLORATORY DATA ANALYSIS**
