@@ -1,0 +1,129 @@
+<!-- This is GUI for Breast Cancer Detection Application Using Machine Learning Classifier -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for background */
+    body {
+      background-color: #ff00d4; /* Navy blue background color */
+      background-image: url('https://www.google.com/imgres?q=breast%20cancer%20hospital&imgurl=https%3A%2F%2Fwww.fortishealthcare.com%2Fdrupal-data%2Fstyles%2Fblog_detail%2Fazblob%2F2023-10%2Fbreast%2520cancer%2520hospital%2520in%2520Mumbai_0.png%3Fitok%3D89Nnr-B5&imgrefurl=https%3A%2F%2Fwww.fortishealthcare.com%2Fblogs%2Fbreast-cancer-hospital-mumbai&docid=pvFZCNm9ZlpBHM&tbnid=dEgbWC7jKt1qLM&vet=12ahUKEwiBz-fC76qGAxUjxzgGHWoACK4QM3oECFgQAA..i&w=818&h=435&hcb=2&ved=2ahUKEwiBz-fC76qGAxUjxzgGHWoACK4QM3oECFgQAA');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color: white; /* Ensure text is readable on dark background */
+    }
+
+    /* CSS code for button */
+    .button_css {
+      color: #494949 !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #ffffff;
+      padding: 20px;
+      border: 4px solid #494949 !important;
+      display: inline-block;
+      transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+      color: #ffffff !important;
+      background: #f6b93b;
+      border-color: #f6b93b !important;
+      transition: all 0.4s ease 0s;
+    }
+
+    /* CSS for the banner */
+    .banner {
+      width: 100%;
+      height: auto;
+    }
+
+    /* CSS for the banner container */
+    .banner-container {
+      background-color: #ff006a;
+      text-align: center;
+    }
+
+    /* Ensure form text inputs are styled appropriately */
+    input[type="text"] {
+      color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show banner image with navy blue background -->
+  <div class="banner-container">
+    <img src="Breast-Cancer-Detection-App-master/static/images/BCP.jpg" class="banner" alt="">
+  </div>
+ 
+  <div class="login">
+    <!-- Get input for predicting cancer -->
+    <center>
+      <form action="{{ url_for('predict')}}" method="post">
+        <h1>Enter the Value of Tumor Features </h1>
+        
+        <input type="text" name="mean_radius" placeholder="mean radius" required="required" />
+        <input type="text" name="mean_texture" placeholder="mean texture" required="required" />
+        <input type="text" name="mean_perimeter" placeholder="mean perimeter" required="required" />
+        <input type="text" name="mean_area" placeholder="mean area" required="required" />
+        <input type="text" name="mean_smoothness" placeholder="mean smoothness" required="required" />
+        <input type="text" name="mean_compactness" placeholder="mean compactness" required="required" />
+        <br>
+        <input type="text" name="mean_concavity" placeholder="mean concavity" required="required" />
+        <input type="text" name="mean_concave_points" placeholder="mean concave points" required="required" />
+        <input type="text" name="mean_symmetry" placeholder="mean symmetry" required="required" />
+        <input type="text" name="mean_fractal_dimension" placeholder="mean fractal dimension" required="required" />
+        <input type="text" name="radius_error" placeholder="radius error" required="required" />
+        <input type="text" name="texture_error" placeholder="texture error" required="required" />
+        <br>
+        <input type="text" name="perimeter_error" placeholder="perimeter error" required="required" />
+        <input type="text" name="area_error" placeholder="area error " required="required" />
+        <input type="text" name="smoothness_error" placeholder="smoothness error" required="required" />
+        <input type="text" name="compactness_error" placeholder="compactness error" required="required" />
+        <input type="text" name="concavity_error" placeholder="concavity error" required="required" />
+        <input type="text" name="concave_points_error" placeholder="concave points error" required="required" />
+        <br>
+        <input type="text" name="symmetry_error" placeholder="symmetry error" required="required" />
+        <input type="text" name="fractal_dimension_error" placeholder="fractal dimension error" required="required" />
+        <input type="text" name="worst_radius" placeholder="worst radius" required="required" />
+        <input type="text" name="worst_texture" placeholder="worst texture" required="required" />
+        <input type="text" name="worst_perimeter" placeholder="worst perimeter" required="required" />
+        <input type="text" name="worst_area" placeholder="worst area" required="required" />
+        <br>
+        <input type="text" name="worst_smoothness" placeholder="worst smoothness" required="required" />
+        <input type="text" name="worst_compactness" placeholder="worst compactness" required="required" />
+        <input type="text" name="worst_concavity" placeholder="worst concavity" required="required" />
+        <input type="text" name="worst_concave_points" placeholder="worst concave points" required="required" />
+        <input type="text" name="worst_symmetry" placeholder="worst symmetry" required="required" />
+        <input type="text" name="worst_fractal_dimension" placeholder="worst fractal dimension" required="required" />
+        <br>
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center">
+          <a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Cancer</strong></button>
+          </a>
+        </div>
+        
+      </form>
+    </center>
+   
+    <!-- Show predicted output using ML model --> 
+    <div>
+      <center>
+        <h1></h1>
+      </center>
+    </div>
+
+  </div>
+
+</body>
+</html>
